@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "./Cupcake.css";
 
 interface CupcakeProps {
@@ -6,8 +5,6 @@ interface CupcakeProps {
 }
 
 function Cupcake({ data }: CupcakeProps) {
-
-
   return (
     <div className="cupcake-container">
       <div className="cupcake">

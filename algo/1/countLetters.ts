@@ -14,8 +14,10 @@ function countLetters(givenString: string, letter: string): number {
 
   function countLetters(str, letter) {
     let count = 0; // on commence le compteur à 0
-    for (let char of str) { // on regarde chaque caractère de la string
-      if (char === letter) { // si c’est la lettre qu’on cherche
+    for (const char of str) {
+      // on regarde chaque caractère de la string
+      if (char === letter) {
+        // si c’est la lettre qu’on cherche
         count++; // on ajoute 1 au compteur
       }
     }

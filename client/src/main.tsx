@@ -32,7 +32,7 @@ const router = createBrowserRouter([
       {
         path: "/cupcakedetail/:id",
         element: <CupcakeDetails />,
-      }
+      },
     ],
   },
 ]);
