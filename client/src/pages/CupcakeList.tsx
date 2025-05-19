@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Cupcake from "../components/Cupcake";
 
 /* ************************************************************************* */
@@ -37,10 +38,30 @@ const sampleCupcakes: CupcakeArray = [
 
 function CupcakeList() {
   // Step 1: get all cupcakes
+  const [, setCupCakes] = useState([]);
+  useEffect(() => {
+    async function getCupCakes() {
+      fetch("http://localhost:3310/api/cupcakes")
+        .then((response) => response.json())
+        .then((data) => setCupCakes(data));
+    }
 
+    getCupCakes();
+  }, []);
   // Step 3: get all accessories
+  const [, setAllAccessories] = useState([]);
+  useEffect(() => {
+    async function getAllAccessories() {
+      fetch(" http://localhost:3310/api/accessories")
+        .then((response) => response.json())
+        .then((data) => setAllAccessories(data));
+    }
+
+    getAllAccessories();
+  }, []);
 
   // Step 5: create filter state
+
 
   return (
     <>
@@ -50,8 +71,11 @@ function CupcakeList() {
           {/* Step 5: use a controlled component for select */}
           Filter by{" "}
           <select id="cupcake-select">
+            {" "}
+            onChange=()
             <option value="">---</option>
             {/* Step 4: add an option for each accessory */}
+            accessories.map((accessory) )
           </select>
         </label>
       </form>
